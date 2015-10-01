@@ -238,11 +238,10 @@ div.output_prompt {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Agenda">Agenda<a class="anchor-link" href="#Agenda">&#182;</a></h1><ul>
-<li>Tooling</li>
-<li>App structure</li>
-<li>Practises</li>
-<li>Testing</li>
-<li>CI and Deployment</li>
+<li><strong>Basic Concepts</strong></li>
+<li><strong>Hello world</strong></li>
+<li><strong>FOSSEvents Project</strong></li>
+<li><strong>Lessons Learnt</strong></li>
 </ul>
 
 </div>
@@ -256,11 +255,33 @@ div.output_prompt {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Tooling">Tooling<a class="anchor-link" href="#Tooling">&#182;</a></h1><ul>
-<li>Editors (PyCharm, SublimeText, Atom, vim, notepad, etc)</li>
-<li>Generators (cookiecutter)</li>
+<h1 id="Basic-Concepts">Basic Concepts<a class="anchor-link" href="#Basic-Concepts">&#182;</a></h1><ul>
+<li>Tooling and setting up your development manchine</li>
+<li>What/why of Django?</li>
+<li>Python vs Django</li>
+<li>Documentation</li>
+<li>Project Generators/boilerplates (cookiecutter)</li>
+<li>Testing (unittest, pytest, linting)</li>
 <li>Build Tools (Makefile, Fabric)</li>
-<li>Linting </li>
+<li>Continuous Integration and Deployment</li>
+</ul>
+
+</div>
+</div>
+</div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Tooling-and-setup-your-dev-machine">Tooling and setup your dev machine<a class="anchor-link" href="#Tooling-and-setup-your-dev-machine">&#182;</a></h1><ul>
+<li>Maintain <a href="https://dotfiles.github.io/">dotfiles</a>.</li>
+<li>Know your editor (PyCharm, SublimeText, Atom, vim, notepad, etc.).</li>
+<li>Use virtualenv per project.</li>
+<li>Use shell scripting to ease your daily tasks</li>
 </ul>
 
 </div>
@@ -286,9 +307,83 @@ div.output_prompt {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Generators">Generators<a class="anchor-link" href="#Generators">&#182;</a></h2><ul>
-<li>Helps you get started quickly.</li>
-<li>Don't worry about boilerplate and repetitive code.</li>
+<h2 id="Virtualenv">Virtualenv<a class="anchor-link" href="#Virtualenv">&#182;</a></h2><p>Maintain seperation of installed libraries per project.</p>
+
+<pre><code>virtualenv venv  # copy python and it's standard libraries to `venv` folder
+source venv/bin/activate  # Activate the environement</code></pre>
+<p><strong>Python3</strong> environment:</p>
+
+<pre><code>virtualenv</code></pre>
+<p><strong>Protip:</strong>
+Setup an alias to create and activate virutalenv</p>
+
+<pre><code>alias sv=if [[ ! -d "venv" &amp;&amp; ! -L "venv" ]] ; then; virtualenv venv; fi; source venv/bin/activate;</code></pre>
+<p>Further reading:</p>
+<ol>
+<li><a href="https://saurabh-kumar.com/blog/virtualenv-vs-virtualenvwrapper.html">virtualenv-vs-virtualenvwrapper</a></li>
+<li><a href="https://github.com/theskumar/dotfiles/blob/master/.aliases#L56-L57">gh:dotfiles/.aliases</a></li>
+</ol>
+
+</div>
+</div>
+</div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="What/Why-of-Django">What/Why of Django<a class="anchor-link" href="#What/Why-of-Django">&#182;</a></h1><ul>
+<li>Python Vs Django</li>
+<li>Different flavours of framework (flask/django/pyramid/web.py)</li>
+</ul>
+
+</div>
+</div>
+</div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Django-Life-Cycle-in-brief">Django Life-Cycle in brief<a class="anchor-link" href="#Django-Life-Cycle-in-brief">&#182;</a></h1><p>-</p>
+
+</div>
+</div>
+</div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Linting">Linting<a class="anchor-link" href="#Linting">&#182;</a></h1><ul>
+<li>Use flake8 as soon as you can.</li>
+<li>Ideally before you make a commit.</li>
+<li>Run it as part of CI build process.</li>
+<li><a href="https://github.com/theskumar/dotfiles/blob/master/bin/git-flake8">git-flake8</a> script, ensures you never make a mistake.</li>
+</ul>
+
+<pre><code>git flake8</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Documentation">Documentation<a class="anchor-link" href="#Documentation">&#182;</a></h2><ul>
+<li>Why</li>
+<li>When</li>
+<li>Tools</li>
+<li>How</li>
 </ul>
 
 </div>
@@ -300,14 +395,17 @@ div.output_prompt {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Linting">Linting<a class="anchor-link" href="#Linting">&#182;</a></h2><ul>
-<li>Use flake8 as soon as you can.</li>
-<li>Ideally before you make a commit.</li>
-<li>Run it as part of CI build process.</li>
-<li><a href="https://github.com/theskumar/dotfiles/blob/master/bin/git-flake8">git-flake8</a> script, ensures you never make a mistake.</li>
+<h2 id="Project-Biolerplates-and-Generators">Project Biolerplates and Generators<a class="anchor-link" href="#Project-Biolerplates-and-Generators">&#182;</a></h2><ul>
+<li>Django has it's own (django-admin.py startproject)</li>
+<li>Cookiecutter <ul>
+<li>Uses jinja templating language for file/folder names and variable substitions.</li>
+</ul>
+</li>
 </ul>
 
-<pre><code>git flake8</code></pre>
+<pre><code>cd code/cookeicutter_demo
+pip install cookiecutter
+cookiecutter .</code></pre>
 
 </div>
 </div>
@@ -315,33 +413,6 @@ div.output_prompt {
     </section><section>
     <section>
     
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="App-Structure">App Structure<a class="anchor-link" href="#App-Structure">&#182;</a></h1><ul>
-<li>Follow a guideline, with which more developers are familiar.</li>
-<li>Namespacing a honking great idea, make use of it.</li>
-</ul>
-
-</div>
-</div>
-</div></section>
-    </section><section>
-    <section>
-    
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Setup-your-computer">Setup your computer<a class="anchor-link" href="#Setup-your-computer">&#182;</a></h1>
-<pre><code>sudo pip install cookiecutter virtualenv fabric</code></pre>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -358,6 +429,20 @@ virtualenv venv; source venv/bin/activate</code></pre>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="FOSSEvents-Projects">FOSSEvents Projects<a class="anchor-link" href="#FOSSEvents-Projects">&#182;</a></h1><ul>
+<li>Requirements and description: <a href="https://github.com/fossevents/fossevents.in/issues/1#issuecomment-100583483">https://github.com/fossevents/fossevents.in/issues/1#issuecomment-100583483</a></li>
+</ul>
+
+<pre><code>cookecutter https://github.com/Fueled/cookiecutter-django.git</code></pre>
+
+</div>
+</div>
 </div></section>
     </section><section>
     <section>
@@ -367,10 +452,12 @@ virtualenv venv; source venv/bin/activate</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Communities">Communities<a class="anchor-link" href="#Communities">&#182;</a></h2><p>You grow with community and help it grow.</p>
-<ul>
+<h1 id="Going-Further">Going Further<a class="anchor-link" href="#Going-Further">&#182;</a></h1><ul>
+<li>Follow communities and developments.<ul>
 <li><a href="https://www.facebook.com/groups/python.django/">https://www.facebook.com/groups/python.django/</a></li>
 <li><a href="https://docs.djangoproject.com/en/1.8/internals/mailing-lists/">https://docs.djangoproject.com/en/1.8/internals/mailing-lists/</a></li>
+</ul>
+</li>
 </ul>
 
 </div>
